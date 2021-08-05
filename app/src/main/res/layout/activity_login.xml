@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:id="@+id/linear_title"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:text="Welcome to Kaiku's Game"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:gravity="bottom|center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_login"
+        android:layout_below="@id/linear_title"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/relative_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp">
+
+            <TextView
+                android:id="@+id/tv_userID"
+                android:text="UserID "
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/edit_userID"
+                android:singleLine="true"
+                android:background="@color/white"
+                android:layout_width="150dp"
+                android:layout_height="30sp"
+                android:layout_toRightOf="@id/tv_userID"
+                android:layout_marginLeft="15dp"/>
+            <TextView
+                android:id="@+id/tv_password"
+                android:text="   密碼  "
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_userID"
+                android:layout_marginTop="30dp"/>
+
+            <EditText
+                android:id="@+id/edit_password"
+                android:singleLine="true"
+                android:background="@color/white"
+                android:layout_width="150dp"
+                android:layout_height="30sp"
+                android:layout_toRightOf="@id/tv_password"
+                android:layout_below="@id/edit_userID"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="15dp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="登入"
+        android:background="@drawable/blue_btn"
+        android:layout_below="@id/linear_login"/>
+
+    <Button
+        android:id="@+id/reg"
+        android:text="註冊"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_login"
+        android:layout_toRightOf="@id/login"
+        android:layout_marginLeft="30dp"/>
+
+</RelativeLayout>
