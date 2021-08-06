@@ -2,6 +2,7 @@ package org.kevin.game;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,7 +27,7 @@ import okhttp3.Response;
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private static final int POSITION = 1;
-    private Button login, reg;
+    private Button login, reg, test;
     private EditText edit_userID, edit_password;
 
     @Override
@@ -35,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         login = findViewById(R.id.login);
         reg = findViewById(R.id.reg);
+        test = findViewById(R.id.test);
         edit_userID = findViewById(R.id.edit_userID);
         edit_password = findViewById(R.id.edit_password);
         login.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +50,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.e(TAG, "onClick: ddd");
                 reg(edit_userID.getText().toString(), edit_password.getText().toString());
+            }
+        });
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, SecondActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -91,6 +100,8 @@ public class LoginActivity extends AppCompatActivity {
                         public void run() {
                             if(userID.equals(server_userID) && password.equals(server_password)){
                                 toast_msg("登入成功");
+                                Intent intent = new Intent(LoginActivity.this, SecondActivity.class);
+                                startActivity(intent);
                             }else{
                                 toast_msg("登入失敗");
                             }
