@@ -8,7 +8,7 @@
 
 
     <view
-        android:id="@+id/view"
+        android:id="@+id/view_labyrinth"
         class="org.kevin.game.LabyrinthView"
         android:layout_width="0dp"
         android:layout_height="0dp"
